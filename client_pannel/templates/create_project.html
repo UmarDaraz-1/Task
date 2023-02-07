@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+      <h1>Create Your Project here</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Create">
+        </form>
+<!-- 
+<form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description"></textarea>
+    </div>
+    <div>
+      <label for="image1">Image 1:</label>
+      <input type="file" id="image1" name="image1">
+    </div>
+    <div>
+      <label for="image2">Image 2:</label>
+      <input type="file" id="image2" name="image2">
+    </div>
+    <div>
+      <label for="image3">Image 3:</label>
+      <input type="file" id="image3" name="image3">
+    </div>
+    <div>
+      <label for="deadline">Deadline:</label>
+      <input type="text" id="deadline" name="deadline">
+    </div>
+    <div>
+      <label for="budget">Budget:</label>
+      <input type="text" id="budget" name="budget">
+    </div>
+    <div>
+      <label for="file1">File 1:</label>
+      <input type="file" id="file1" name="file1">
+    </div>
+    <div>
+      <label for="file2">File 2:</label>
+      <input type="file" id="file2" name="file2">
+    </div>
+    <div>
+      <label for="file3">File 3:</label>
+      <input type="file" id="file3" name="file3">
+    </div>
+    <div>
+      <label for="closed">Closed:</label>
+      <input type="checkbox" id="closed" name="closed">
+    </div>
+    <button type="submit">Create</button>
+  </form>
+  -->
+    </body>
+</html>
+{% endblock content %}

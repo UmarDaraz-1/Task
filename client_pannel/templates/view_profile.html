@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+<body>
+    <h1>Welcome To Your Profile</h1>
+<p>This is where you can view your profile information.</p>
+
+
+
+<h1>{{ profile.user }}'s Profile</h1>
+
+<p>Name: {{ profile.user }}</p>
+<p>Picture: {{ profile.profile_pic.url }} </p>
+
+<p>Phone: {{ profile.phone_number }}</p>
+<p>Country: {{ profile.country }} </p>
+
+
+<a href="{% url 'edit_profile' %}">Edit Profile</a>
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

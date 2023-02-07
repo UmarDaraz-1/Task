@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Register in to Django</h3>
+		<div class="card-text">
+			
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input type="text" name="username" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email address</label>
+					<input type="email" name="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+                <div class="form-group">
+					<label for="phone_number">Phone</label>
+					<input type="text" name="phone_number" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+                <div class="form-group">
+					<label for="country">Country</label>
+					<input type="text" name="country" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+                <div>
+                    <label for="profile_pic">Profile_pic</label>
+                    <input type="file" id="profile_pic" name="profile_pic">
+                  </div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Password</label>
+					<a href="#" style="float:right;font-size:12px;">Forgot password?</a>
+					<input type="password" name="password" class="form-control form-control-sm" id="exampleInputPassword1">
+				</div>
+				<button type="submit" class="btn btn-primary btn-block">Sign up</button>
+				
+				<div class="sign-up">
+					Already have an account? <a href="{% url 'loginUser' %}">Login</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+
+
+  
+{% endblock content %}

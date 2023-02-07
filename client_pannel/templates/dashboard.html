@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h1>Welcome to Dashboard</h1>
+        You need to update your project
+        <table>
+            <thead>
+              <tr>
+                <th>Project Name</th>
+                <th>Actions</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for project in projects %}
+                <tr>
+                  <td>{{ project.name }}</td>
+                  {% if project.pk %}
+                    <td><a href="{% url 'update_project' pk=project.pk %}">Update</a></td>
+                    <td><a href="{% url 'delete_project' pk=project.pk %}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                  {% else %}
+                    <td><a href="{% url 'create_project' %}">Create</a></td>
+                  {% endif %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          
+    </body>
+</html>
+{% endblock content %}
